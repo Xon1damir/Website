@@ -1,0 +1,75 @@
+
+
+.Table-Bottom{
+    border-top: 1px solid rgb(150, 147, 147);
+    margin-top: 36px;
+    background-color: #ffffff;
+    box-shadow: inset 0px 1px 0px #E5E9EB;
+    padding:16px 20px;
+}
+
+
+.Button-Container{
+    margin-left: 750px;
+}
+
+
+.Onclick-Button{
+    flex-direction: row;
+    align-items: center;
+    background: #4094F7;;
+    border-radius: 6px;
+    height: 32px;
+    width: 32px;
+    border: none;
+    margin-left: 10px;
+    padding: 4px;
+}
+
+.Default-Button{
+    flex-direction: row;
+    background-color: white;
+    border-radius: 6px;
+    height: 32px;
+    width: 32px;
+    border: none;
+    margin-left: 10px;
+    padding: 4px;
+}
+
+.Default-Button:hover{
+    flex-direction: row;
+    background-color: blue;
+    border-radius: 6px;
+    height: 32px;
+    width: 32px;
+    border: none;
+    margin-left: 10px;
+    padding: 4px;
+   
+}
+
+
+.Text-1{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: white;
+}
+
+.Text-2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: black;   
+}
+
+.Text-2:hover{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: white;   
+}

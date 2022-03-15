@@ -1,0 +1,209 @@
+.Table-Container{
+    background-color: #e2e4ff;
+    flex-direction: column;
+    margin-left: 64px;
+    padding: 20px;
+}
+
+
+.Table-Container-2{
+    background:#ffffff;
+    border-radius: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Menu qismiga style */
+.Menu{
+    border-top: 4px;
+    display: flex;
+}
+.Button-Menu{
+    padding: 16px 2px;
+    width: 150px;
+    height: 56px;
+    margin-right: 10px;
+    display: flex;
+    border: none;
+    border-top-left-radius:4px;
+    background: #ffffff;
+}
+
+
+.Button-Menu-1{
+    padding: 16px 2px;
+    width: 130px;
+    height: 56px;
+    margin-right: 10px;
+    display: flex;
+    border: none;
+    border-top-left-radius:4px;
+    background: #ffffff;
+    border-bottom: 3px solid  #4094F7;
+}
+
+
+
+.Button-Menu-Text{
+    color: #6E8BB7;
+    width: 90px;
+    height: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+.react-tabs ul .react-tabs__tab{
+    border-bottom: 1px solid blue;
+    border: none;
+}
+.Button-Menu-Text-1{
+    color: #4094F7;
+    width: 90px;
+    height: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+
+.Circle{
+    width: 25px;
+    height: 25px;
+    background: rgba(110, 139, 183, 0.75);  
+    color: #ffffff;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.Circle1{
+    width: 38px;
+    height: 25px;
+    background: rgba(110, 139, 183, 0.75);  
+    color: #ffffff;
+    margin-top: 5px;
+    font-style: normal;
+    border-radius: 6px;
+}
+
+.Circle-text{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    font-style: normal;
+    margin-top: 5px;
+    margin-left: 7px;
+}
+
+
+.Tbody-time{
+    margin-top: 5px;
+    margin-left: 15px;
+    background: linear-gradient(0deg, rgba(56, 217, 185, 0.2), rgba(56, 217, 185, 0.2)), #FFFFFF;
+    border-radius: 6px;
+    text-align: center;
+    justify-items: center;
+    color: #1AC19D;
+    width: 70px;
+    height: 27px;
+}
+
+
+.line{
+    width: 14px;
+    height: 1px;
+    position: static;
+    background: #6E8BB7;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.Adress-Text{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 12px;
+    font-style: normal;
+    margin-top: 3px;
+    color: #303940;
+}
+
+.Adress-Time{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 12px;
+    font-style: normal;
+    margin-top: 10px;
+    color: #4094F7;
+}
+
+.Tbody-Buttons{
+    background: linear-gradient(0deg, rgba(248, 221, 78, 0.3), rgba(248, 221, 78, 0.3)), #FFFFFF;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 104px;
+    height: 32px;
+    border: 1px solid rgba(248, 221, 78, 0.3) ;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.Buttons-Text{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 12px;
+    font-style: normal;
+    margin-top: 3px;
+    color: #D29404;
+    
+}
+
+.Tbody-Container{
+    width: 28px;
+    height: 28px;
+    background-color: red;
+    background: #FFFFFF;
+    text-align: center;
+    border: 1px solid #E5E9EB;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.Container-Text{
+    font-size: 16px;
+    font-weight: 800 ;
+    line-height: 12px;
+    font-style: normal;
+    margin-top: 3px;
+    color: #4094F7;
+}
+
+.CheckBox{
+    margin-left: 5px;
+    margin-top: 15px;
+    background: #F6F8F9;
+    border: 1px solid rgba(110, 139, 183, 0.4);
+    box-sizing: border-box;
+
+}
+.CheckBoxTop{
+    margin-left: 5px;
+}
+
+.Number{
+    color:blue;
+    margin-top: 9px;
+    width: 7px;
+    height: 24px;
+    font-size: 15px;
+    color: #303940;
+}
+
+.table-border{
+    border: 1px solid #E5E9EB;
+}

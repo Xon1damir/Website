@@ -1,0 +1,294 @@
+
+
+.side-menu-controls{
+    text-align: center;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+    width: 64px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.link-container-1{
+    width: 40px;
+    height: 40px;
+    margin: 16px 12px;
+    background-color: blue;
+    text-align: center; 
+    background: linear-gradient(45deg, #0974E9 0%, #3593F9 100%);
+}
+
+.link-1{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    margin-top: auto;
+}
+.link-1:hover{
+    color: white;
+}
+
+.side-menu-list{
+    width: 48px;
+    height: 192px;
+    margin-left: 5px;
+    margin-right: 8px;
+    margin-top: 16px;
+    margin-bottom: 170px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.Icons-Shop{
+    color: white;
+    margin-bottom: 17px;
+    width: 48px;
+    height: 48px;
+    background-color: #0974E9;
+}
+
+.Icons-Vector{
+    margin-bottom: 29px;
+}
+
+.Icons-Vector:hover{
+    background-color: blue;
+}
+
+.Icons-1{
+    width: 14px;
+    height: 15px;
+    margin: 14px;
+    color: white;
+}
+
+
+.Icons-2{
+    width: 14px;
+    height: 15px;
+    margin: 12px;
+    color: grey;
+}
+.Icons-2:hover{
+    color: white;
+}
+
+
+
+.site-menu-list-2{
+    width: 48px;
+    height: 192px;
+    margin-left: 5px;
+    margin-right: 8px;
+    margin-top: 16px;
+    margin-bottom: 588px;
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Header Menu */
+
+
+
+
+/* Header-Top */
+.Header-Top{
+    padding: 10px 8px ;  
+    margin-left: 64px;
+    display: flex;
+    border: 1px solid #F7F9FB ;
+}
+.Top-Left{
+    width: 819px;
+    height: 32px;
+}
+
+.Text{
+    margin-left: 20px;
+    font-size: 30px;
+    color: #303940;
+}
+
+.Right-1{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 32px;
+    background: #FFFFFF;
+    box-shadow: inset 1px 0px 0px #E5E9EB;
+    order: 2;
+    margin-left: 50px;
+    border: hidden;
+}
+
+.Right-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 32px;
+    background: #FFFFFF;
+    box-shadow: inset 1px 0px 0px #E5E9EB;
+    order: 2;
+    border: hidden;
+}
+.Icons-3{
+    width: 14px;
+    height: 15px;
+    margin-left: 23px;
+    color: grey;
+}
+.Icons-4{
+    width: 14px;
+    height: 15px;
+    margin-left: 23px;
+    color: #4094F7;
+
+}
+
+.Icons-5{
+    width: 14px;
+    height: 15px;
+    margin-left: 23px;
+    color: #1AC19D;
+}
+.Right-text-1{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4094F7;
+    margin: 0px 12px;
+}
+.Right-text-2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #1AC19D;
+    margin: 0px 12px;
+}
+.Top-Right{
+    display: flex;
+}
+
+.Right-text{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #6E8BB7;
+    margin: 0px 12px;
+}
+
+
+
+/* Header-Bottom */
+.Header-Bottom{
+    margin-left: 64px;
+    background: #F7F9FB;
+    padding: 15px;
+    border: 1px solid #F7F9FB ;
+    display: flex;
+}
+
+.Bottom-Search{
+    padding-left: 11px;
+    width: 400px;
+    height: 33px;
+    background: #FFFFFF;
+    display: flex; 
+    border: 1px solid #E5E9EB;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+.Search-Icons{
+    margin-top: 8px;
+    color: #B0BABF;
+}
+.Search{
+    width: 399px;
+    height: 31px;
+    border: hidden; 
+    margin-left: 8px;
+}
+
+.Days{
+    display: flex;  
+    background-color: #FFFFFF;   
+    margin-left: 400px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #E9EEF4;
+}
+
+.Days-Button{
+    padding: 0;
+    width: 32px;
+    height: 32.5px;
+    border: 1px solid #E9EEF4;
+    background-color: white;
+    color: #4094F7; 
+    
+}
+.Days-Text{
+    color: #303940;
+    margin: 3px 5px;
+}
+
+.Bottom-Icons-Button-1{
+    display: flex;
+    margin-left: 24px;
+    margin-right: 10px;
+    padding-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 32px;
+    order: 2;
+    border: hidden;
+    background: #F7F9FB;
+
+}
+
+.Bottom-Icons-Button-2{
+    display: flex;
+    margin-right: 10px;
+    padding-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 32px;
+    order: 2;
+    border: hidden;
+    background: #F7F9FB;
+}
+
+
+.Icons-List-1{
+    color: #303940;
+    margin-bottom: 5px;
+    margin-right: 17px;
+    width: 12px;
+    height: 12px;
+
+}
+
+
+.Icons-Text{
+    color: #303940;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 2px;
+}
