@@ -62,7 +62,7 @@
   margin-left: 65px;
   margin-bottom: 16px;
   margin-right: 16px;
-  padding: 3px;
+  padding: 10px;
 }
 
 .input-3 {
@@ -77,7 +77,7 @@
   margin-left: 35px;
   margin-bottom: 16px;
   margin-right: 16px;
-  padding: 3px;
+  padding: 10px;
 }
 
 .input-4 {
@@ -92,7 +92,7 @@
   margin-left: 40px;
   margin-bottom: 16px;
   margin-right: 16px;
-  padding: 3px;
+  padding: 10px;
 }
 
 .input-5 {
@@ -107,7 +107,7 @@
   margin-left: 30px;
   margin-bottom: 16px;
   margin-right: 16px;
-  padding: 3px;
+  padding: 10px;
 }
 
 .text-2 {
@@ -153,6 +153,28 @@
   color: #1a2024;
   margin-top: 8px;
   margin-bottom: 8px;
+  margin-left: 16px;
+}
+
+.Right-Select-1 {
+  width: 165px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e9eb;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding-left: 7px;
+  margin-left: 16px;
+}
+
+.Right-Select-2 {
+  width: 165px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e9eb;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding-left: 7px;
   margin-left: 16px;
 }
 
@@ -229,7 +251,7 @@
   line-height: 24px;
   color: #48535b;
   margin-top: 10px;
-  margin-left: 16px;
+  margin-right: 20px;
 }
 
 .Bottom-Input-1 {
@@ -239,7 +261,7 @@
   border: 1px solid #e5e9eb;
   box-sizing: border-box;
   border-radius: 6px;
-  padding: 4px;
+  padding: 10px;
   margin-left: 16px;
 }
 
@@ -250,7 +272,7 @@
   border: 1px solid #e5e9eb;
   box-sizing: border-box;
   border-radius: 6px;
-  padding: 4px;
+  padding: 10px;
 }
 
 .Bottom-Container-2 {
@@ -273,7 +295,7 @@
 
 .Bottom-Input-3 {
   align-items: center;
-  padding: 8px 12px;
+  padding: 8px 10px;
   width: 430px;
   height: 32px;
   background: #ffffff;
@@ -283,7 +305,7 @@
   margin-left: 10px;
   margin-top: 5px;
 }
-  
+
 .Bottom-Container-3 {
   display: flex;
   width: 562px;
@@ -439,7 +461,7 @@
   color: #48535b;
 }
 
-.Input-Container-1 {
+.Select-Container-1 {
   position: static;
   width: 300px;
   height: 34px;
@@ -539,6 +561,8 @@
   width: 32px;
   height: 32px;
   box-shadow: inset -1px 0px 0px #ebedee;
+  border: none;
+  border-radius: 6px;
 }
 
 .Icons-Minus {
@@ -548,7 +572,7 @@
   line-height: 24px;
   color: #4094f7;
   margin-top: 2px;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 .Text-Box {
   background: #ffffff;
@@ -574,8 +598,10 @@
   padding-top: 6px;
   width: 32px;
   height: 32px;
-  margin-left: 15px;
+  margin-left: 20px;
   box-shadow: inset 1px 0px 0px #ebedee;
+  border: none;
+  border-radius: 6px;
 }
 
 .Icons-Plus {
@@ -585,7 +611,7 @@
   line-height: 24px;
   color: #4094f7;
   margin-top: 2px;
-  margin-left: 13px;
+  margin-left: 5px;
 }
 
 .Box-Icon-6 {
@@ -833,7 +859,7 @@
   box-sizing: border-box;
   border-radius: 6px;
   margin: 16px;
-  padding: 3px;
+  padding: 10px;
 }
 
 /* Column  */
@@ -976,4 +1002,14 @@
   color: #4094f7;
   margin-left: 10px;
   margin-top: 8px;
+}
+
+.Icons-Plus-3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #4094f7;
+  margin-top: 2px;
+  margin-left: 13px;
 }
