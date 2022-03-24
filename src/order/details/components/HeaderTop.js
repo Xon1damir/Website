@@ -5,7 +5,7 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faCancel } from "@fortawesome/free-solid-svg-icons";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
-class Top extends React.Component {
+class HeaderTop extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -54,4 +54,4 @@ class Top extends React.Component {
   }
 }
 
-export default Top;
+export default HeaderTop;

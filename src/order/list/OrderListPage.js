@@ -1,8 +1,8 @@
 import React from "react";
-import Left from "./Left";
+import Sidebar from "./components/Sidebar";
 import Right from "./Right";
 import './Order.css'
-class Order extends React.Component{
+class OrderListPage extends React.Component{
     constructor(props){
         super(props)
     }
@@ -11,8 +11,8 @@ class Order extends React.Component{
     render(){
         return(
             <div>
-                <div className="div" >
-                    <Left/>  
+                <div className="div">
+                    <Sidebar/>  
                     <Right/>  
                 </div>
             </div>
@@ -21,4 +21,4 @@ class Order extends React.Component{
 }
 
 
-export default Order
+export default OrderListPage

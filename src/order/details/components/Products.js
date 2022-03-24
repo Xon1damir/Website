@@ -11,7 +11,7 @@ import { faCar } from "@fortawesome/free-solid-svg-icons";
 
 // console.log('test')
 
-class Bottom extends React.Component {
+class Products extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -169,4 +169,4 @@ class Bottom extends React.Component {
   }
 }
 
-export default Bottom;
+export default Products;

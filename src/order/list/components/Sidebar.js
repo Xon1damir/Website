@@ -7,7 +7,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 
-class Left extends React.Component{
+class Sidebar extends React.Component{
     constructor(props){
         super(props)
     }
@@ -53,4 +53,4 @@ class Left extends React.Component{
 
 
 
-export default Left
+export default Sidebar

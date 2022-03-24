@@ -1,45 +1,58 @@
 import React from "react";
-import Bottom from "./bottom";
-import Left from "./left";
-import Right from "./right";
-import "./rightbottom.css";
+import CustomerInfo from "../components/CustomerInfo";
+import Products from "../components/Products";
+import DeliveryDetails from "../components/DeliveryDetails";
 
-class RightBottom extends React.Component {
+import "../styles/rightbottom.css";
+
+class OrderDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Арина",
-      surname: "Соколова",
-      phone: "+998(94)-570-20-56",
-      description: "+998(94)-570-20-56",
-      address: "Адрес или обьект",
-      branch: "Сергильский-7 район",
-      home: "20-Дом",
-      apartment: "18-Квартира",
-      floor: "3-Этаж",
-      number: 1,
-      money: 26000,
-      total_money: 26000,
-      select_item: "клaб сендвич ",
-      select_client: "мужской",
-      options: [
-        {
-          label: "Клаб сендвич",
-          value: "клaб сендвич",
-        },
-        {
-          label: "Бургер",
-          value: "бургер",
-        },
-        {
-          label: "Хотдог",
-          value: "хотдог",
-        },
-        {
-          label: "Лаваш",
-          value: "лаваш",
-        },
-      ],
+      customer_info: {
+        gender: "мужской",
+        name: "Арина",
+        surname: "Соколова",
+        phone: "+998(94)-570-20-56",
+        description: "+998(94)-570-20-56"
+      },
+      delivery: {
+        address: "Адрес или обьект",
+        branch: "Сергильский-7 район",
+        tarrif: "Тариф 1",
+        home: "20-Дом",
+        apartment: "18-Квартира",
+        floor: "3-Этаж"
+      },
+      products: [{
+        id: 1,
+        name: "клaб сендвич ",
+        price: 26000,
+        quantity: 3,
+        total: 78000, // price * quantity
+      }, {
+        id: 2,
+        name: "Хот дог",
+        price: 15000,
+        quantity: 2,
+        total: 30000
+      }],
+      product_options: [{
+        label: "Клаб сендвич",
+        value: "1",
+      },
+      {
+        label: "Бургер",
+        value: "2",
+      },
+      {
+        label: "Хотдог",
+        value: "3",
+      },
+      {
+        label: "Лаваш",
+        value: "лаваш",
+      }],
       clients: [
         {
           label: "Mужской",
@@ -51,7 +64,7 @@ class RightBottom extends React.Component {
         },
       ],
       select_delivery: "доставкa",
-      delivery_type: [
+      delivery_type_options: [
         {
           label: "Доставка",
           value: "доставкa",
@@ -61,8 +74,7 @@ class RightBottom extends React.Component {
           value: "cамовывоз",
         },
       ],
-      select_branch: "Тариф 1",
-      branch_type: [
+      tarrif_options: [
         {
           label: "Тариф 1",
           value: "Тариф 1 ",
@@ -109,7 +121,12 @@ class RightBottom extends React.Component {
     this.setState({ description: event.target.value });
   }
   handleChangeAddress(event) {
-    this.setState({ address: event.target.value });
+    this.setState({ 
+      delivery: {
+        ...this.state.delivery,
+        address: event.target.value
+      }
+    });
   }
 
   handleChangeHome(event) {
@@ -170,10 +187,19 @@ class RightBottom extends React.Component {
       select_branch: value,
     });
   }
-  increment() {
+  handleProductQuantityIncrement(productId) {
+    let updatedProductList = this.state.products.map((product) => {
+      if(product.id == productId){
+        return {
+          ...product,
+          quantity: product.quantity + 1
+        }
+      }
+      return product
+    });
+
     this.setState({
-      number: this.state.number + 1,
-      total_money: this.state.total_money + this.state.money,
+      products: updatedProductList
     });
   }
 
@@ -193,20 +219,21 @@ class RightBottom extends React.Component {
     return (
       <div className="Container">
         <div className="Container-Top">
-          <Left
-            clients={this.state.clients}
-            select_value={this.state.select_value}
-            name={this.state.name}
-            surname={this.state.surname}
-            phone={this.state.phone}
-            description={this.state.description}
+          <CustomerInfo
+            customer_info = {this.state.customer_info}
+            // clients={this.state.clients}
+            // select_value={this.state.select_value}
+            // name={this.state.name}
+            // surname={this.state.surname}
+            // phone={this.state.phone}
+            // description={this.state.description}
             handleChangeName={this.handleChangeName}
             handleChangeSurname={this.handleChangeSurname}
             handleChangePhone={this.handleChangePhone}
             handleChangeDescription={this.handleChangeDescription}
             handleChangeSelect_Client={this.handleChangeSelect_Client}
           />
-          <Right
+          <DeliveryDetails
             address={this.state.address}
             branch={this.state.branch}
             delivery_type={this.state.delivery_type}
@@ -224,7 +251,7 @@ class RightBottom extends React.Component {
             handleChangeFloor={this.handleChangeFloor}
           />
         </div>
-        <Bottom
+        <Products
           number={this.state.number}
           money={this.state.money}
           item={this.state.select_item}
@@ -239,4 +266,4 @@ class RightBottom extends React.Component {
   }
 }
 
-export default RightBottom;
+export default OrderDetails;

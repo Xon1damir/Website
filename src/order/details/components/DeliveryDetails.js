@@ -1,6 +1,6 @@
 import React from "react";
-import Map from "./map";
-class Right extends React.Component {
+import Map from "./Map";
+class DeliveryDetails extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -106,11 +106,4 @@ class Right extends React.Component {
   }
 }
 
-export default Right;
-
-// <input
-// value={this.props.rating}
-// className="Bottom-Input-2"
-// onChange={this.props.handleChangeRating}
-// placeholder="Тариф"
-// />
+export default DeliveryDetails;

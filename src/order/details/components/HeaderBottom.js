@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 
-class Bottom extends React.Component {
+class HeaderBottom extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -29,4 +29,4 @@ class Bottom extends React.Component {
   }
 }
 
-export default Bottom;
+export default HeaderBottom;

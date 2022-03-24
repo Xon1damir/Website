@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-class Left extends React.Component {
+class CustomerInfo extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -80,8 +80,4 @@ class Left extends React.Component {
   }
 }
 
-export default Left;
-
-{
-  /* <input className="input-1" value={this.props.client} onChange={this.props.handleChangeClient} type="text" placeholder="Тип клиента" /> */
-}
+export default CustomerInfo;

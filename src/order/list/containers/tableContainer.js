@@ -1,7 +1,7 @@
 import React from "react";
 import "./Table.css";
-import TableMenu from "./tableMenu";
-import TableBottom from "./tableBottom";
+import TableMenu from "../tableMenu";
+import TableBottom from "../tableBottom";
 class TableContainer extends React.Component {
   constructor(props) {
     super(props);
