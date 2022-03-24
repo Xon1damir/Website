@@ -9,6 +9,8 @@ import { faEquals } from "@fortawesome/free-solid-svg-icons";
 import { faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { faCar } from "@fortawesome/free-solid-svg-icons";
 
+// console.log('test')
+
 class Bottom extends React.Component {
   constructor(props) {
     super(props);
