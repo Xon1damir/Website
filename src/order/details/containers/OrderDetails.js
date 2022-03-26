@@ -14,7 +14,7 @@ class OrderDetails extends React.Component {
         name: "Арина",
         surname: "Соколова",
         phone: "+998(94)-570-20-56",
-        description: "+998(94)-570-20-56"
+        description: "+998(94)-570-20-56",
       },
       delivery: {
         address: "Адрес или обьект",
@@ -22,38 +22,43 @@ class OrderDetails extends React.Component {
         tarrif: "Тариф 1",
         home: "20-Дом",
         apartment: "18-Квартира",
-        floor: "3-Этаж"
+        floor: "3-Этаж",
       },
-      products: [{
-        id: 1,
-        name: "клaб сендвич ",
-        price: 26000,
-        quantity: 3,
-        total: 78000, // price * quantity
-      }, {
-        id: 2,
-        name: "Хот дог",
-        price: 15000,
-        quantity: 2,
-        total: 30000
-      }],
-      product_options: [{
-        label: "Клаб сендвич",
-        value: "1",
-      },
-      {
-        label: "Бургер",
-        value: "2",
-      },
-      {
-        label: "Хотдог",
-        value: "3",
-      },
-      {
-        label: "Лаваш",
-        value: "лаваш",
-      }],
-      clients: [
+      products: [
+        {
+          id: 1,
+          name: "клaб сендвич ",
+          price: 26000,
+          quantity: 3,
+          total: 78000, // price * quantity
+        },
+        {
+          id: 2,
+          name: "Хот дог",
+          price: 15000,
+          quantity: 2,
+          total: 30000,
+        },
+      ],
+      product_options: [
+        {
+          label: "Клаб сендвич",
+          value: "1",
+        },
+        {
+          label: "Бургер",
+          value: "2",
+        },
+        {
+          label: "Хотдог",
+          value: "3",
+        },
+        {
+          label: "Лаваш",
+          value: "лаваш",
+        },
+      ],
+      client_options: [
         {
           label: "Mужской",
           value: "мужской",
@@ -97,48 +102,92 @@ class OrderDetails extends React.Component {
     this.handleChangeHome = this.handleChangeHome.bind(this);
     this.handleChangeApartment = this.handleChangeApartment.bind(this);
     this.handleChangeFloor = this.handleChangeFloor.bind(this);
-    this.increment = this.increment.bind(this);
+    this.handleProductQuantityIncrement =
+      this.handleProductQuantityIncrement.bind(this);
     this.decrement = this.decrement.bind(this);
     this.handleChangeItem = this.handleChangeItem.bind(this);
     this.handleChangeSelect_Client = this.handleChangeSelect_Client.bind(this);
     this.handleChangeSelect_Delivery =
       this.handleChangeSelect_Delivery.bind(this);
-    this.handleChangeSelect_Branch = this.handleChangeSelect_Branch.bind(this);
+    this.handleChangeSelect_Tarrif = this.handleChangeSelect_Tarrif.bind(this);
+    this.handleChangeBranch = this.handleChangeBranch.bind(this);
   }
   handleChangeName(event) {
-    this.setState({ name: event.target.value });
-  }
-
-  handleChangeSurname(event) {
-    this.setState({ surname: event.target.value });
-  }
-
-  handleChangePhone(event) {
-    this.setState({ phone: event.target.value });
-  }
-
-  handleChangeDescription(event) {
-    this.setState({ description: event.target.value });
-  }
-  handleChangeAddress(event) {
-    this.setState({ 
-      delivery: {
-        ...this.state.delivery,
-        address: event.target.value
-      }
+    this.setState({
+      customer_info: {
+        ...this.state.customer_info,
+        name: event.target.value,
+      },
     });
   }
 
+  handleChangeSurname(event) {
+    this.setState({
+      customer_info: {
+        ...this.state.customer_info,
+        surname: event.target.value,
+      },
+    });
+  }
+
+  handleChangePhone(event) {
+    this.setState({
+      customer_info: {
+        ...this.state.customer_info,
+        phone: event.target.value,
+      },
+    });
+  }
+
+  handleChangeDescription(event) {
+    this.setState({
+      customer_info: {
+        ...this.state.customer_info,
+        description: event.target.value,
+      },
+    });
+  }
+  handleChangeAddress(event) {
+    this.setState({
+      delivery: {
+        ...this.state.delivery,
+        address: event.target.value,
+      },
+    });
+  }
+  handleChangeBranch(event) {
+    this.setState({
+      delivery: {
+        ...this.state.delivery,
+        branch: event.target.value,
+      },
+    });
+  }
   handleChangeHome(event) {
-    this.setState({ home: event.target.value });
+    this.setState({
+      delivery: {
+        ...this.state.delivery,
+        home: event.target.value,
+      },
+    });
   }
 
   handleChangeApartment(event) {
-    this.setState({ apartment: event.target.value });
+    this.setState({
+      delivery: {
+        ...this.state.delivery,
+        apartment: event.target.value,
+      },
+    });
   }
 
   handleChangeFloor(event) {
-    this.setState({ floor: event.target.value });
+    this.setState({
+      delivery: {
+        ...this.state.delivery,
+        floor: event.target.value,
+      },
+    });
   }
 
   // set burgers to state item
@@ -147,7 +196,6 @@ class OrderDetails extends React.Component {
   handleChangeItem(value) {
     let type = value;
     let money = this.state.money;
-
     switch (type) {
       case "клaб сендвич":
         money = 26000;
@@ -174,7 +222,10 @@ class OrderDetails extends React.Component {
 
   handleChangeSelect_Client(value) {
     this.setState({
-      select_client: value,
+      customer_info: {
+        ...this.state.customer_info,
+        gender: value,
+      },
     });
   }
   handleChangeSelect_Delivery(value) {
@@ -182,24 +233,27 @@ class OrderDetails extends React.Component {
       select_delivery: value,
     });
   }
-  handleChangeSelect_Branch(value) {
+  handleChangeSelect_Tarrif(value) {
     this.setState({
-      select_branch: value,
+      delivery: {
+        ...this.state.delivery,
+        tarrif: value,
+      },
     });
   }
   handleProductQuantityIncrement(productId) {
     let updatedProductList = this.state.products.map((product) => {
-      if(product.id == productId){
+      if (product.id == productId) {
         return {
           ...product,
-          quantity: product.quantity + 1
-        }
+          quantity: product.quantity + 1,
+        };
       }
-      return product
+      return product;
     });
 
     this.setState({
-      products: updatedProductList
+      products: updatedProductList,
     });
   }
 
@@ -220,8 +274,8 @@ class OrderDetails extends React.Component {
       <div className="Container">
         <div className="Container-Top">
           <CustomerInfo
-            customer_info = {this.state.customer_info}
-            // clients={this.state.clients}
+            customer_info={this.state.customer_info}
+            client_options={this.state.client_options}
             // select_value={this.state.select_value}
             // name={this.state.name}
             // surname={this.state.surname}
@@ -234,29 +288,32 @@ class OrderDetails extends React.Component {
             handleChangeSelect_Client={this.handleChangeSelect_Client}
           />
           <DeliveryDetails
-            address={this.state.address}
-            branch={this.state.branch}
-            delivery_type={this.state.delivery_type}
-            branch_type={this.state.branch_type}
-            select_branch={this.state.select_branch}
-            select_delivery={this.state.select_delivery}
-            home={this.state.home}
-            apartment={this.state.apartment}
-            floor={this.state.floor}
+            delivery={this.state.delivery}
+            delivery_type_options={this.state.delivery_type_options}
+            tarrif_options={this.state.tarrif_options}
+            // address={this.state.address}
+            // branch={this.state.branch}
+            // select_branch={this.state.select_branch}
+            // select_delivery={this.state.select_delivery}
+            // home={this.state.home}
+            // apartment={this.state.apartment}
+            // floor={this.state.floor}
             handleChangeSelect_Delivery={this.handleChangeSelect_Delivery}
-            handleChangeSelect_Branch={this.handleChangeSelect_Branch}
+            handleChangeSelect_Tarrif={this.handleChangeSelect_Tarrif}
             handleChangeAddress={this.handleChangeAddress}
             handleChangeHome={this.handleChangeHome}
             handleChangeApartment={this.handleChangeApartment}
             handleChangeFloor={this.handleChangeFloor}
+            handleChangeBranch={this.handleChangeBranch}
           />
         </div>
         <Products
-          number={this.state.number}
-          money={this.state.money}
-          item={this.state.select_item}
-          options={this.state.options}
-          total_money={this.state.total_money}
+          product={this.state.products}
+          options={this.state.product_options}
+          // number={this.state.number}
+          // money={this.state.money}
+          // item={this.state.select_item}
+          // total_money={this.state.total_money}
           increment={this.increment}
           decrement={this.decrement}
           handleChangeItem={this.handleChangeItem}

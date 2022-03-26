@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Table.css";
+import "../styles/Table.css";
 
-class TableItems extends React.Component {
+class ListTabItems extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,7 +13,7 @@ class TableItems extends React.Component {
           <input type="checkbox" className="CheckBox" />
         </th>
         <td>
-          <h1 className="Number">{item_.number}</h1>
+          <h1 className="Number-1">{item_.number}</h1>
         </td>
         <td>
           <div className="Adress">
@@ -23,7 +22,7 @@ class TableItems extends React.Component {
           </div>
         </td>
         <td>
-          <h1 className="Number">{item_.id}</h1>
+          <h1 className="Number-1">{item_.id}</h1>
         </td>
         <td>
           <div className="Tbody-time">{item_.timing}</div>
@@ -76,4 +75,4 @@ class TableItems extends React.Component {
   }
 }
 
-export default TableItems;
+export default ListTabItems;

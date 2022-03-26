@@ -1,8 +1,7 @@
 import React from "react";
-import Sidebar from "../order/Sidebar";
+import Sidebar from "../list/components/Sidebar";
 import OrderDetails from "./containers/OrderDetails";
-import Right from "./right";
-
+import Header from "./components/Header";
 
 class OrderDetailsPage extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class OrderDetailsPage extends React.Component {
     return (
       <React.Fragment>
         <Sidebar />
-        <RightTop />
+        <Header />
         <OrderDetails />
       </React.Fragment>
     );

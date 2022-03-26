@@ -1,8 +1,8 @@
 import React from "react";
-import "./Table.css";
-import TableMenu from "../tableMenu";
-import TableBottom from "../tableBottom";
-class TableContainer extends React.Component {
+import "../styles/Table.css";
+import TableMenu from "../components/ListTab";
+import TableBottom from "../components/tableBottom";
+class ListTabContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -355,4 +355,4 @@ class TableContainer extends React.Component {
   }
 }
 
-export default TableContainer;
+export default ListTabContainer;

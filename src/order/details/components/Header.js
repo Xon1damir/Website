@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderBottom from "./HeaderBottom";
 import HeaderTop from "./HeaderTop";
-import './righttop.css'
+import "../styles/righttop.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,5 +18,4 @@ class Header extends React.Component {
   }
 }
 
-
-export default Header
+export default Header;

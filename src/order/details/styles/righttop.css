@@ -76,7 +76,6 @@
   font-size: 14px;
   line-height: 24px;
   color: #6e8bb7;
-  margin: 0px 12px;
 }
 
 .Right_1 {
@@ -271,7 +270,7 @@
       rgba(110, 139, 183, 0.05)
     ),
     #ffffff;
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .Button-5_Text {

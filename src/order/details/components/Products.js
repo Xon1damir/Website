@@ -114,18 +114,18 @@ class Products extends React.Component {
           <div className="Box-Left">
             <div className="Left-Header-1">
               <h1 className="Box-Text-10">Типы оплаты</h1>
-              <buton className="Left-Button-1">
+              <button className="Left-Button-1">
                 <FontAwesomeIcon icon={faPlus} className="Icons-Plus-3" />
-              </buton>
-              <buton className="Left-Button-2">
+              </button>
+              <button className="Left-Button-2">
                 <FontAwesomeIcon icon={faPlus} className="Icons-Plus-3" />
-              </buton>
-              <buton className="Left-Button-3">
+              </button>
+              <button className="Left-Button-3">
                 <FontAwesomeIcon icon={faPlus} className="Icons-Plus-3" />
-              </buton>
-              <buton className="Left-Button-4">
+              </button>
+              <button className="Left-Button-4">
                 <FontAwesomeIcon icon={faPlus} className="Icons-Plus-3" />
-              </buton>
+              </button>
             </div>
             <div className="Input-Container-3">
               <h1 className="Box-Text-11">Курьер</h1>

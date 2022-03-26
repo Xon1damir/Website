@@ -1,10 +1,11 @@
 import React from "react";
-import "./Table.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import TableItems from "./tableItems";
+import ListTabItems from "./ListTabItems";
 
-class TableMenu extends React.Component {
+import "../styles/Table.css";
+
+class ListTab extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,7 +21,7 @@ class TableMenu extends React.Component {
         className = "Button-Menu-Text-1";
         tabPanel = (
           <TabPanel value={this.props.tab_menu[i].value}>
-            <TableItems items={this.props.items} />
+            <ListTabItems items={this.props.items} />
           </TabPanel>
         );
       } else {
@@ -61,4 +62,4 @@ class TableMenu extends React.Component {
   }
 }
 
-export default TableMenu;
+export default ListTab;

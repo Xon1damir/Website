@@ -23,7 +23,7 @@ class CustomerInfo extends React.Component {
                 this.props.handleChangeSelect_Client(e.target.value)
               }
             >
-              {this.props.clients.map((client_) => (
+              {this.props.client_options.map((client_) => (
                 <option value={client_.value}>{client_.label}</option>
               ))}
             </select>
@@ -32,7 +32,7 @@ class CustomerInfo extends React.Component {
             <h1 className="text-2">Имя</h1>
             <input
               className="input-2"
-              value={this.props.name}
+              value={this.props.customer_info.name}
               onChange={this.props.handleChangeName}
               type="text"
               placeholder="Введите имя"
@@ -42,7 +42,7 @@ class CustomerInfo extends React.Component {
             <h1 className="text-2">Фамилия</h1>
             <input
               className="input-3"
-              value={this.props.surname}
+              value={this.props.customer_info.surname}
               onChange={this.props.handleChangeSurname}
               type="text"
               placeholder="Фамилия"
@@ -52,7 +52,7 @@ class CustomerInfo extends React.Component {
             <h1 className="text-2">Телефон</h1>
             <input
               className="input-4"
-              value={this.props.phone}
+              value={this.props.customer_info.phone}
               onChange={this.props.handleChangePhone}
               type="text"
               placeholder="Телефон"
@@ -65,7 +65,7 @@ class CustomerInfo extends React.Component {
             <h1 className="text-2">Описание</h1>
             <input
               className="input-5"
-              value={this.props.description}
+              value={this.props.customer_info.description}
               onChange={this.props.handleChangeDescription}
               type="text"
               placeholder="Телефон"

@@ -29,7 +29,7 @@ class DeliveryDetails extends React.Component {
                     this.props.handleChangeSelect_Delivery(e.target.value)
                   }
                 >
-                  {this.props.delivery_type.map((delivery_) => (
+                  {this.props.delivery_type_options.map((delivery_) => (
                     <option value={delivery_.value}>{delivery_.label}</option>
                   ))}
                 </select>
@@ -40,10 +40,10 @@ class DeliveryDetails extends React.Component {
                   value={this.props.select_branch}
                   className="Right-Select-2"
                   onChange={(e) =>
-                    this.props.handleChangeSelect_Branch(e.target.value)
+                    this.props.handleChangeSelect_Tarrif(e.target.value)
                   }
                 >
-                  {this.props.branch_type.map((branch_) => (
+                  {this.props.tarrif_options.map((branch_) => (
                     <option value={branch_.value}>{branch_.label}</option>
                   ))}
                 </select>
@@ -52,7 +52,7 @@ class DeliveryDetails extends React.Component {
             <div className="Bottom-Container-2">
               <h1 className="Bottom-Text-3">Адрес</h1>
               <input
-                value={this.props.address}
+                value={this.props.delivery.address}
                 className="Bottom-Input-3"
                 onChange={this.props.handleChangeAddress}
                 placeholder="Адрес или обьект"
@@ -65,7 +65,7 @@ class DeliveryDetails extends React.Component {
           <div className="Bottom-Container-3">
             <h1 className="Bottom-Text-3">Филиал</h1>
             <input
-              value={this.props.branch}
+              value={this.props.delivery.branch}
               className="Bottom-Input-3"
               onChange={this.props.handleChangeBranch}
               placeholder="Филиал"
@@ -75,7 +75,7 @@ class DeliveryDetails extends React.Component {
             <div className="Image-Top-Box-1">
               <h1 className="Bottom-Text-1">Дом</h1>
               <input
-                value={this.props.home}
+                value={this.props.delivery.home}
                 className="Bottom-Input-1"
                 onChange={this.props.handleChangeHome}
                 placeholder="Дом"
@@ -84,7 +84,7 @@ class DeliveryDetails extends React.Component {
             <div className="Image-Top-Box-2">
               <h1 className="Bottom-Text-2">Квартира</h1>
               <input
-                value={this.props.apartment}
+                value={this.props.delivery.apartment}
                 className="Bottom-Input-2"
                 onChange={this.props.handleChangeApartment}
                 placeholder="Квартира"
@@ -94,7 +94,7 @@ class DeliveryDetails extends React.Component {
           <div className="Bottom-Container-4">
             <h1 className="Bottom-Text-3">Этаж</h1>
             <input
-              value={this.props.floor}
+              value={this.props.delivery.floor}
               className="Bottom-Input-3"
               onChange={this.props.handleChangeFloor}
               placeholder="Этаж"
