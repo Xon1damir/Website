@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Table.css";
 import TableMenu from "../components/ListTab";
-import TableBottom from "../components/tableBottom";
+import ListTabBottom from "../components/ListTabBottom";
 class ListTabContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -348,7 +348,7 @@ class ListTabContainer extends React.Component {
             handleClick={this.handleClick}
             choosen_tab={this.state.choosen_tab}
           />
-          <TableBottom />
+          <ListTabBottom />
         </div>
       </div>
     );
