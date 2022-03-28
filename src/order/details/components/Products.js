@@ -89,9 +89,13 @@ class Products extends React.Component {
             <h1 className="Box-Text-9">Описание</h1>
             <input value="Описание" className="Box-Input-4" />
           </div>
-          <div className="Box-Icon-7" type="button">
+          <button
+            className="Box-Icon-7"
+            type="button"
+            onClick={(e) => this.props.deleteProduct(id, e)}
+          >
             <FontAwesomeIcon icon={faCancel} className="Icons-Canel-2" />
-          </div>
+          </button>
         </div>
       );
     }

@@ -32,6 +32,13 @@ class OrderDetails extends React.Component {
           quantity: 1,
           total: 26000, // price * quantity
         },
+        {
+          id: 2,
+          name: "клaб сендвич ",
+          price: 26000,
+          quantity: 1,
+          total: 26000, // price * quantity
+        },
       ],
       product_options: [
         {
@@ -107,6 +114,7 @@ class OrderDetails extends React.Component {
     this.handleChangeSelect_Tarrif = this.handleChangeSelect_Tarrif.bind(this);
     this.handleChangeBranch = this.handleChangeBranch.bind(this);
     this.addProduct = this.addProduct.bind(this);
+    this.deleteProduct = this.deleteProduct.bind(this);
   }
   handleChangeName(event) {
     this.setState({
@@ -215,15 +223,17 @@ class OrderDetails extends React.Component {
 
   addProduct() {
     let product = this.state.products;
-    let id = 1;
+    let lest_id = 1;
+
     if (product.length == 0) {
-      id = 1;
+      lest_id = 1;
     } else {
-      id = this.state.products[this.state.products.length - 1].id;
+      lest_id = this.state.products[this.state.products.length - 1].id;
     }
+    console.log("this is lest_id", lest_id);
 
     product.push({
-      id: id,
+      id: 2,
       name: "бургер",
       price: 18000,
       quantity: 1,
@@ -232,6 +242,20 @@ class OrderDetails extends React.Component {
     this.setState({
       products: product,
     });
+  }
+
+  deleteProduct(id) {
+    let con = window.confirm("Do you want to remove this line?");
+    if (con === true) {
+      let filteredProduct = this.state.products.filter((product, h) => {
+        return product.id !== id;
+      });
+      this.setState({
+        products: filteredProduct,
+      });
+    } else {
+      return;
+    }
   }
 
   handleChangeProduct_options(value) {
@@ -274,10 +298,9 @@ class OrderDetails extends React.Component {
           quantity: product.quantity + 1,
         };
       }
-      console.log("this is :" + id + product.id);
       return product;
     });
-
+    console.log("this is : ", id);
     this.setState({
       products: updatedProductList,
     });
@@ -329,6 +352,7 @@ class OrderDetails extends React.Component {
           products={this.state.products}
           product_options={this.state.product_options}
           addProduct={this.addProduct}
+          deleteProduct={this.deleteProduct}
           handleProductQuantityIncrement={this.handleProductQuantityIncrement}
           handleProductQuantityDecrement={this.handleProductQuantityDecrement}
           handleChangeProduct_options={this.handleChangeProduct_options}
