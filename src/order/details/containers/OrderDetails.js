@@ -29,29 +29,22 @@ class OrderDetails extends React.Component {
           id: 1,
           name: "клaб сендвич ",
           price: 26000,
-          quantity: 3,
-          total: 78000, // price * quantity
-        },
-        {
-          id: 2,
-          name: "Хот дог",
-          price: 15000,
-          quantity: 2,
-          total: 30000,
+          quantity: 1,
+          total: 26000, // price * quantity
         },
       ],
       product_options: [
         {
           label: "Клаб сендвич",
-          value: "1",
+          value: "клаб сендвич",
         },
         {
           label: "Бургер",
-          value: "2",
+          value: "бургер",
         },
         {
           label: "Хотдог",
-          value: "3",
+          value: "xотдог",
         },
         {
           label: "Лаваш",
@@ -104,13 +97,16 @@ class OrderDetails extends React.Component {
     this.handleChangeFloor = this.handleChangeFloor.bind(this);
     this.handleProductQuantityIncrement =
       this.handleProductQuantityIncrement.bind(this);
-    this.decrement = this.decrement.bind(this);
-    this.handleChangeItem = this.handleChangeItem.bind(this);
+    this.handleProductQuantityDecrement =
+      this.handleProductQuantityDecrement.bind(this);
+    this.handleChangeProduct_options =
+      this.handleChangeProduct_options.bind(this);
     this.handleChangeSelect_Client = this.handleChangeSelect_Client.bind(this);
     this.handleChangeSelect_Delivery =
       this.handleChangeSelect_Delivery.bind(this);
     this.handleChangeSelect_Tarrif = this.handleChangeSelect_Tarrif.bind(this);
     this.handleChangeBranch = this.handleChangeBranch.bind(this);
+    this.addProduct = this.addProduct.bind(this);
   }
   handleChangeName(event) {
     this.setState({
@@ -144,6 +140,14 @@ class OrderDetails extends React.Component {
       customer_info: {
         ...this.state.customer_info,
         description: event.target.value,
+      },
+    });
+  }
+  handleChangeSelect_Client(value) {
+    this.setState({
+      customer_info: {
+        ...this.state.customer_info,
+        gender: value,
       },
     });
   }
@@ -190,44 +194,6 @@ class OrderDetails extends React.Component {
     });
   }
 
-  // set burgers to state item
-  // change money depending on selected burger type
-
-  handleChangeItem(value) {
-    let type = value;
-    let money = this.state.money;
-    switch (type) {
-      case "клaб сендвич":
-        money = 26000;
-        break;
-      case "бургер":
-        money = 18000;
-        break;
-      case "хотдог":
-        money = 15000;
-        break;
-      case "лаваш":
-        money = 22000;
-        break;
-
-      default:
-    }
-    this.setState({
-      money: money,
-      select_item: value,
-      total_money: money,
-      number: 1,
-    });
-  }
-
-  handleChangeSelect_Client(value) {
-    this.setState({
-      customer_info: {
-        ...this.state.customer_info,
-        gender: value,
-      },
-    });
-  }
   handleChangeSelect_Delivery(value) {
     this.setState({
       select_delivery: value,
@@ -241,9 +207,68 @@ class OrderDetails extends React.Component {
       },
     });
   }
-  handleProductQuantityIncrement(productId) {
+
+  // set burgers to state item
+  // change money depending on selected burger type
+
+  // Add Products
+
+  addProduct() {
+    let product = this.state.products;
+    let id = 1;
+    if (product.length == 0) {
+      id = 1;
+    } else {
+      product[this.state.products.length - 1].id;
+    }
+
+    product.push({
+      id: id,
+      name: "бургер",
+      price: 18000,
+      quantity: 1,
+      total: 18000,
+    });
+    this.setState({
+      products: product,
+    });
+  }
+
+  handleChangeProduct_options(value) {
+    // let type = value;
+    // switch (type) {
+    //   case "клaб сендвич":
+    //     price = 26000;
+    //     break;
+    //   case "бургер":
+    //     price = 18000;
+    //     break;
+    //   case "хотдог":
+    //     price = 15000;
+    //     break;
+    //   case "лаваш":
+    //     price = 22000;
+    //     break;
+    //   default:
+    // }
+    // money: price,
+    //   product_options: value,
+    //   total_money: money,
+    //   number: 1,
+    // this.setState({
+    //   products: {
+    //     ...this.state.products,
+    //     name: type,
+    //     price: price,
+    //     total: price,
+    //     quantity: 1,
+    //   },
+    // });
+  }
+
+  handleProductQuantityIncrement(id) {
     let updatedProductList = this.state.products.map((product) => {
-      if (product.id == productId) {
+      if (product.id == id) {
         return {
           ...product,
           quantity: product.quantity + 1,
@@ -257,15 +282,19 @@ class OrderDetails extends React.Component {
     });
   }
 
-  decrement() {
-    let number = this.state.number;
-    if (number > 0) {
-    } else {
-      return;
-    }
+  handleProductQuantityDecrement(id) {
+    let decrement = this.state.products.map((product) => {
+      if (product.id == id) {
+        return {
+          ...product,
+          quantity: product.quantity - 1,
+        };
+      }
+      return product;
+    });
+
     this.setState({
-      number: this.state.number - 1,
-      total_money: this.state.total_money - this.state.money,
+      products: decrement,
     });
   }
 
@@ -276,11 +305,6 @@ class OrderDetails extends React.Component {
           <CustomerInfo
             customer_info={this.state.customer_info}
             client_options={this.state.client_options}
-            // select_value={this.state.select_value}
-            // name={this.state.name}
-            // surname={this.state.surname}
-            // phone={this.state.phone}
-            // description={this.state.description}
             handleChangeName={this.handleChangeName}
             handleChangeSurname={this.handleChangeSurname}
             handleChangePhone={this.handleChangePhone}
@@ -291,13 +315,6 @@ class OrderDetails extends React.Component {
             delivery={this.state.delivery}
             delivery_type_options={this.state.delivery_type_options}
             tarrif_options={this.state.tarrif_options}
-            // address={this.state.address}
-            // branch={this.state.branch}
-            // select_branch={this.state.select_branch}
-            // select_delivery={this.state.select_delivery}
-            // home={this.state.home}
-            // apartment={this.state.apartment}
-            // floor={this.state.floor}
             handleChangeSelect_Delivery={this.handleChangeSelect_Delivery}
             handleChangeSelect_Tarrif={this.handleChangeSelect_Tarrif}
             handleChangeAddress={this.handleChangeAddress}
@@ -308,15 +325,12 @@ class OrderDetails extends React.Component {
           />
         </div>
         <Products
-          product={this.state.products}
-          options={this.state.product_options}
-          // number={this.state.number}
-          // money={this.state.money}
-          // item={this.state.select_item}
-          // total_money={this.state.total_money}
-          increment={this.increment}
-          decrement={this.decrement}
-          handleChangeItem={this.handleChangeItem}
+          products={this.state.products}
+          product_options={this.state.product_options}
+          addProduct={this.addProduct}
+          handleProductQuantityIncrement={this.handleProductQuantityIncrement}
+          handleProductQuantityDecrement={this.handleProductQuantityDecrement}
+          handleChangeProduct_options={this.handleChangeProduct_options}
         />
       </div>
     );
@@ -324,3 +338,22 @@ class OrderDetails extends React.Component {
 }
 
 export default OrderDetails;
+
+// select_value={this.state.select_value}
+// name={this.state.name}
+// surname={this.state.surname}
+// phone={this.state.phone}
+// description={this.state.description}
+
+// number={this.state.number}
+// money={this.state.money}
+// item={this.state.select_item}
+// total_money={this.state.total_money}
+
+// address={this.state.address}
+// branch={this.state.branch}
+// select_branch={this.state.select_branch}
+// select_delivery={this.state.select_delivery}
+// home={this.state.home}
+// apartment={this.state.apartment}
+// floor={this.state.floor}

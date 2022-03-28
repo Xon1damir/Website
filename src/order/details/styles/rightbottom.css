@@ -322,7 +322,6 @@
 .Bottom-Box-1 {
   width: 1245px;
   background: #ffffff;
-  height: 389px;
   border-radius: 5px;
   margin-top: 20px;
   padding: 2px;
@@ -703,17 +702,25 @@
 }
 
 /* Add Button */
-
-.Button-Container-1 {
+.Push-Product {
   display: flex;
-  flex-direction: column;
-  position: static;
   width: 1227px;
   height: 56px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-right: 16px;
   margin-bottom: 16px;
+  flex-direction: row;
+}
+.Button-Container-1 {
+  display: flex;
+  width: 1227px;
+  height: 56px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  margin-bottom: 16px;
+  flex-direction: column;
 }
 
 .Box-Button-1 {
@@ -728,7 +735,7 @@
   border: 1px dashed rgba(110, 139, 183, 0.5);
   box-sizing: border-box;
   border-radius: 6px;
-  margin-bottom: 24px;
+  margin-top: 13px;
 }
 
 .Button-Text-1 {

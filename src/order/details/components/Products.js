@@ -17,6 +17,84 @@ class Products extends React.Component {
   }
 
   render() {
+    let data = this.props.products;
+    let row = [];
+    let id = 0;
+
+    for (let i = 0; i < data.length; i++) {
+      if (id < 0) {
+        id = 0;
+      } else {
+        id = data[i].id;
+      }
+      row.push(
+        <div className="Push-Product">
+          <div className="Box-Box-1">
+            <h1 className="Box-Text-4">Наименование</h1>
+            <select
+              value={this.props.select_item}
+              className="Select-Container-1"
+              onChange={(e) =>
+                this.props.handleChangeProduct_options(e.target.value)
+              }
+            >
+              {this.props.product_options.map((option) => (
+                <option value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </div>
+          <div className="Box-Box-2">
+            <div className="">
+              <h1 className="Box-Text-5">Цена</h1>
+              <input value={data[i].price} className="Box-Input-2" />
+            </div>
+            <div className="Box-Icon-3">
+              <FontAwesomeIcon icon={faCancel} className="Icons-Canel" />
+            </div>
+            <div>
+              <h1 className="Box-Text-6">Кол-во</h1>
+              <div className="Add">
+                <button
+                  className="Box-Icon-4"
+                  type="button"
+                  onClick={(e) =>
+                    this.props.handleProductQuantityDecrement(id, e)
+                  }
+                >
+                  <FontAwesomeIcon icon={faMinus} className="Icons-Minus" />
+                </button>
+                <div className="Text-Box">
+                  <h1 className="Box-Text-7">{data[i].quantity} </h1>
+                </div>
+                <button
+                  className="Box-Icon-5"
+                  type="button"
+                  onClick={(e) =>
+                    this.props.handleProductQuantityIncrement(id, e)
+                  }
+                >
+                  <FontAwesomeIcon icon={faPlus} className="Icons-Plus" />
+                </button>
+              </div>
+            </div>
+            <div className="Box-Icon-6">
+              <FontAwesomeIcon icon={faEquals} className="Icons-Equals" />
+            </div>
+            <div className="Input-Container-2">
+              <h1 className="Box-Text-8">Общая стоимость</h1>
+              <input value={data[i].total} className="Box-Input-3" />
+            </div>
+          </div>
+          <div className="Box-Box-3">
+            <h1 className="Box-Text-9">Описание</h1>
+            <input value="Описание" className="Box-Input-4" />
+          </div>
+          <div className="Box-Icon-7" type="button">
+            <FontAwesomeIcon icon={faCancel} className="Icons-Canel-2" />
+          </div>
+        </div>
+      );
+    }
     let service_fee = 10000;
 
     if (this.props.total_money == 0) {
@@ -43,68 +121,12 @@ class Products extends React.Component {
             </div>
           </div>
         </div>
+
         <div className="Box-2">
-          <div className="Box-Container-2">
-            <div className="Box-Box-1">
-              <h1 className="Box-Text-4">Наименование</h1>
-              <select
-                value={this.props.select_item}
-                className="Select-Container-1"
-                onChange={(e) => this.props.handleChangeItem(e.target.value)}
-              >
-                {this.props.options.map((option) => (
-                  <option value={option.value}>{option.label}</option>
-                ))}
-              </select>
-            </div>
-            <div className="Box-Box-2">
-              <div className="">
-                <h1 className="Box-Text-5">Цена</h1>
-                <input value={this.props.money} className="Box-Input-2" />
-              </div>
-              <div className="Box-Icon-3">
-                <FontAwesomeIcon icon={faCancel} className="Icons-Canel" />
-              </div>
-              <div>
-                <h1 className="Box-Text-6">Кол-во</h1>
-                <div className="Add">
-                  <button
-                    className="Box-Icon-4"
-                    type="button"
-                    onClick={this.props.decrement}
-                  >
-                    <FontAwesomeIcon icon={faMinus} className="Icons-Minus" />
-                  </button>
-                  <div className="Text-Box">
-                    <h1 className="Box-Text-7">{this.props.number} </h1>
-                  </div>
-                  <button
-                    className="Box-Icon-5"
-                    type="button"
-                    onClick={this.props.increment}
-                  >
-                    <FontAwesomeIcon icon={faPlus} className="Icons-Plus" />
-                  </button>
-                </div>
-              </div>
-              <div className="Box-Icon-6">
-                <FontAwesomeIcon icon={faEquals} className="Icons-Equals" />
-              </div>
-              <div className="Input-Container-2">
-                <h1 className="Box-Text-8">Общая стоимость</h1>
-                <input value={this.props.total_money} className="Box-Input-3" />
-              </div>
-            </div>
-            <div className="Box-Box-3">
-              <h1 className="Box-Text-9">Описание</h1>
-              <input value="Описание" className="Box-Input-4" />
-            </div>
-            <div className="Box-Icon-7" type="button">
-              <FontAwesomeIcon icon={faCancel} className="Icons-Canel-2" />
-            </div>
-          </div>
+          <div className="Box-Container-2"></div>
           <div className="Button-Container-1">
-            <button className="Box-Button-1">
+            {row}
+            <button className="Box-Button-1" onClick={this.props.addProduct}>
               <FontAwesomeIcon icon={faPlus} className="Icons-Plus-2" />
               <h1 className="Button-Text-1">Добавить продукт</h1>
             </button>
@@ -143,7 +165,7 @@ class Products extends React.Component {
                 <FontAwesomeIcon icon={faMoneyBill} className="Icons-Money" />
                 <h1 className="Box-Text-12">Сумма заказа</h1>
               </div>
-              <h1 className="Box-Text-13">{this.props.total_money} сум</h1>
+              <h1 className="Box-Text-13"> 12000сум</h1>
             </div>
             <div className="Middle-Right">
               <div className="Header-Right-2">
@@ -158,9 +180,7 @@ class Products extends React.Component {
                 <FontAwesomeIcon icon={faCar} className="Icons-Car" />
                 <h1 className="Box-Text-15">Итого</h1>
               </div>
-              <h1 className="Box-Text-16">
-                {this.props.total_money + service_fee} суm
-              </h1>
+              <h1 className="Box-Text-16">10000 суm</h1>
             </div>
           </div>
         </div>

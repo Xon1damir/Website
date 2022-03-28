@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import "../styles/tableBottom.css";
-class TableBottom extends React.Component {
+class ListTabBottom extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -44,4 +44,4 @@ class TableBottom extends React.Component {
   }
 }
 
-export default TableBottom;
+export default ListTabBottom;
