@@ -219,7 +219,7 @@ class OrderDetails extends React.Component {
     if (product.length == 0) {
       id = 1;
     } else {
-      product[this.state.products.length - 1].id;
+      id = this.state.products[this.state.products.length - 1].id;
     }
 
     product.push({
@@ -274,6 +274,7 @@ class OrderDetails extends React.Component {
           quantity: product.quantity + 1,
         };
       }
+      console.log("this is :" + id + product.id);
       return product;
     });
 
