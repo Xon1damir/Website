@@ -33,6 +33,7 @@ class OrderDetails extends React.Component {
           total: 26000, // price * quantity
         },
       ],
+      select_product: "клаб сендвич",
       product_options: [
         {
           label: "Клаб сендвич",
@@ -109,6 +110,14 @@ class OrderDetails extends React.Component {
     this.addProduct = this.addProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
   }
+  handleChangeSelect_Client(value) {
+    this.setState({
+      customer_info: {
+        ...this.state.customer_info,
+        gender: value,
+      },
+    });
+  }
   handleChangeName(event) {
     this.setState({
       customer_info: {
@@ -144,14 +153,7 @@ class OrderDetails extends React.Component {
       },
     });
   }
-  handleChangeSelect_Client(value) {
-    this.setState({
-      customer_info: {
-        ...this.state.customer_info,
-        gender: value,
-      },
-    });
-  }
+
   handleChangeAddress(event) {
     this.setState({
       delivery: {
@@ -209,6 +211,24 @@ class OrderDetails extends React.Component {
     });
   }
 
+  handleChangeProduct_options(value) {
+    // switch (type) {
+    //   case "клaб сендвич":
+    //     price = 26000;
+    //     break;
+    //   case "бургер":
+    //     price = 18000;
+    //     break;
+    //   case "хотдог":
+    //     price = 15000;
+    //     break;
+    //   case "лаваш":
+    //     price = 22000;
+    //     break;
+    //   default:
+    // }
+  }
+
   // set burgers to state item
   // change money depending on selected burger type
 
@@ -226,9 +246,9 @@ class OrderDetails extends React.Component {
     product.push({
       id: lest_id,
       name: "бургер",
-      price: 18000,
+      price: 26000,
       quantity: 1,
-      total: 18000,
+      total: 26000,
     });
     this.setState({
       products: product,
@@ -247,38 +267,6 @@ class OrderDetails extends React.Component {
     } else {
       return;
     }
-  }
-
-  handleChangeProduct_options(value) {
-    // let type = value;
-    // switch (type) {
-    //   case "клaб сендвич":
-    //     price = 26000;
-    //     break;
-    //   case "бургер":
-    //     price = 18000;
-    //     break;
-    //   case "хотдог":
-    //     price = 15000;
-    //     break;
-    //   case "лаваш":
-    //     price = 22000;
-    //     break;
-    //   default:
-    // }
-    // money: price,
-    //   product_options: value,
-    //   total_money: money,
-    //   number: 1,
-    // this.setState({
-    //   products: {
-    //     ...this.state.products,
-    //     name: type,
-    //     price: price,
-    //     total: price,
-    //     quantity: 1,
-    //   },
-    // });
   }
 
   handleProductQuantityIncrement(id) {
@@ -304,6 +292,7 @@ class OrderDetails extends React.Component {
           quantity: product.quantity - 1,
         };
       }
+
       return product;
     });
 
@@ -341,6 +330,7 @@ class OrderDetails extends React.Component {
         <Products
           products={this.state.products}
           product_options={this.state.product_options}
+          select_product={this.state.select_product}
           addProduct={this.addProduct}
           deleteProduct={this.deleteProduct}
           handleProductQuantityIncrement={this.handleProductQuantityIncrement}

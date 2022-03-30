@@ -9,8 +9,6 @@ import { faEquals } from "@fortawesome/free-solid-svg-icons";
 import { faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { faCar } from "@fortawesome/free-solid-svg-icons";
 
-// console.log('test')
-
 class Products extends React.Component {
   constructor(props) {
     super(props);
@@ -19,17 +17,20 @@ class Products extends React.Component {
   render() {
     let data = this.props.products;
     let row = [];
-    let id = 0;
+    // let quantity = 0;
 
     for (let i = 0; i < data.length; i++) {
-      id = data[i].id;
-
+      // if (data[i].quantity < 0) {
+      //   quantity = 0;
+      // } else {
+      //   quantity = data[i].quantity;
+      // }
       row.push(
         <div className="Push-Product">
           <div className="Box-Box-1">
             <h1 className="Box-Text-4">Наименование</h1>
             <select
-              value={this.props.select_item}
+              value={this.props.select_product}
               className="Select-Container-1"
               onChange={(e) =>
                 this.props.handleChangeProduct_options(e.target.value)
@@ -55,7 +56,7 @@ class Products extends React.Component {
                   className="Box-Icon-4"
                   type="button"
                   onClick={(e) =>
-                    this.props.handleProductQuantityDecrement(id, e)
+                    this.props.handleProductQuantityDecrement(data[i].id, e)
                   }
                 >
                   <FontAwesomeIcon icon={faMinus} className="Icons-Minus" />
@@ -67,7 +68,7 @@ class Products extends React.Component {
                   className="Box-Icon-5"
                   type="button"
                   onClick={(e) =>
-                    this.props.handleProductQuantityIncrement(id, e)
+                    this.props.handleProductQuantityIncrement(data[i].id, e)
                   }
                 >
                   <FontAwesomeIcon icon={faPlus} className="Icons-Plus" />
@@ -79,7 +80,10 @@ class Products extends React.Component {
             </div>
             <div className="Input-Container-2">
               <h1 className="Box-Text-8">Общая стоимость</h1>
-              <input value={data[i].total} className="Box-Input-3" />
+              <input
+                value={data[i].price * data[i].quantity}
+                className="Box-Input-3"
+              />
             </div>
           </div>
           <div className="Box-Box-3">
@@ -89,19 +93,12 @@ class Products extends React.Component {
           <button
             className="Box-Icon-7"
             type="button"
-            onClick={(e) => this.props.deleteProduct(id, e)}
+            onClick={(e) => this.props.deleteProduct(data[i].id, e)}
           >
             <FontAwesomeIcon icon={faCancel} className="Icons-Canel-2" />
           </button>
         </div>
       );
-    }
-    let service_fee = 10000;
-
-    if (this.props.total_money == 0) {
-      service_fee = 0;
-    } else {
-      service_fee = 10000;
     }
     return (
       <div className="Bottom-Box-1">
