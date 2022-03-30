@@ -3,7 +3,7 @@ import CustomerInfo from "../components/CustomerInfo";
 import Products from "../components/Products";
 import DeliveryDetails from "../components/DeliveryDetails";
 
-import "../styles/rightbottom.css";
+import "../styles/OrderDetails.css";
 
 class OrderDetails extends React.Component {
   constructor(props) {
@@ -353,22 +353,3 @@ class OrderDetails extends React.Component {
 }
 
 export default OrderDetails;
-
-// select_value={this.state.select_value}
-// name={this.state.name}
-// surname={this.state.surname}
-// phone={this.state.phone}
-// description={this.state.description}
-
-// number={this.state.number}
-// money={this.state.money}
-// item={this.state.select_item}
-// total_money={this.state.total_money}
-
-// address={this.state.address}
-// branch={this.state.branch}
-// select_branch={this.state.select_branch}
-// select_delivery={this.state.select_delivery}
-// home={this.state.home}
-// apartment={this.state.apartment}
-// floor={this.state.floor}
