@@ -22,11 +22,8 @@ class Products extends React.Component {
     let id = 0;
 
     for (let i = 0; i < data.length; i++) {
-      if (id < 0) {
-        id = 0;
-      } else {
-        id = data[i].id;
-      }
+      id = data[i].id;
+
       row.push(
         <div className="Push-Product">
           <div className="Box-Box-1">

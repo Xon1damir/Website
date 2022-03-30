@@ -32,13 +32,6 @@ class OrderDetails extends React.Component {
           quantity: 1,
           total: 26000, // price * quantity
         },
-        {
-          id: 2,
-          name: "клaб сендвич ",
-          price: 26000,
-          quantity: 1,
-          total: 26000, // price * quantity
-        },
       ],
       product_options: [
         {
@@ -228,12 +221,10 @@ class OrderDetails extends React.Component {
     if (product.length == 0) {
       lest_id = 1;
     } else {
-      lest_id = this.state.products[this.state.products.length - 1].id;
+      lest_id = product[product.length - 1].id + 1;
     }
-    console.log("this is lest_id", lest_id);
-
     product.push({
-      id: 2,
+      id: lest_id,
       name: "бургер",
       price: 18000,
       quantity: 1,
@@ -245,7 +236,7 @@ class OrderDetails extends React.Component {
   }
 
   deleteProduct(id) {
-    let con = window.confirm("Do you want to remove this line?");
+    let con = window.confirm("Do you want to remove this product?");
     if (con === true) {
       let filteredProduct = this.state.products.filter((product, h) => {
         return product.id !== id;
@@ -300,7 +291,6 @@ class OrderDetails extends React.Component {
       }
       return product;
     });
-    console.log("this is : ", id);
     this.setState({
       products: updatedProductList,
     });
